@@ -217,9 +217,10 @@ class _DatePickerState extends State<_DataPickerComponent> {
           padding: EdgeInsets.all(8.0),
           height: _kDatePickerHeight,
           decoration: BoxDecoration(
-              color: (widget.isDark) ? Colors.white : Color(0xFF191919)),
+              color: (!widget.isDark) ? Colors.white : Color(0xFF191919)),
           child: CupertinoPicker(
-            backgroundColor: (widget.isDark) ? Colors.white : Color(0xFF191919),
+            backgroundColor:
+                (!widget.isDark) ? Colors.white : Color(0xFF191919),
             scrollController: dataScrollCtrl,
             itemExtent: _kDatePickerItemHeight,
             onSelectedItemChanged: (int index) {
@@ -235,7 +236,7 @@ class _DatePickerState extends State<_DataPickerComponent> {
                         child: Text(
                       '${widget.datas[index]}$suffixAppend',
                       style: TextStyle(
-                        color: (widget.isDark) ? Colors.blue : Colors.white,
+                        color: (!widget.isDark) ? Colors.blue : Colors.white,
                         fontSize: _kDatePickerFontSize,
                       ),
                       textAlign: TextAlign.center,
@@ -262,7 +263,7 @@ class _DatePickerState extends State<_DataPickerComponent> {
     return Container(
       height: _kDatePickerTitleHeight,
       decoration: BoxDecoration(
-          color: (widget.isDark) ? Colors.white : Color(0xFF191919)),
+          color: (!widget.isDark) ? Colors.white : Color(0xFF191919)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -285,7 +286,7 @@ class _DatePickerState extends State<_DataPickerComponent> {
             child: Text(
               widget.title.toString().toUpperCase(),
               style: TextStyle(
-                color: (widget.isDark) ? Colors.black : Colors.white,
+                color: (!widget.isDark) ? Colors.black : Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 18.0,
               ),
@@ -297,7 +298,7 @@ class _DatePickerState extends State<_DataPickerComponent> {
               child: Text(
                 '$done'.toUpperCase(),
                 style: TextStyle(
-                    color: (widget.isDark)
+                    color: (!widget.isDark)
                         ? Theme.of(context).primaryColor
                         : Colors.green,
                     fontSize: 14.0,
