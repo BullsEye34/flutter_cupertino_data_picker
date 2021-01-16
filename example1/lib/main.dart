@@ -36,7 +36,7 @@ class _AppState extends State<App> {
       context,
       showTitleActions: showTitleActions,
       locale: 'en',
-      isDark: true,
+      isDark: false,
       datas: ['dog', 'cat'],
       title: 'select',
       onChanged: (data) {
