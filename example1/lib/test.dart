@@ -210,9 +210,9 @@ class _DatePickerState extends State<_DataPickerComponent> {
       child: Container(
           padding: EdgeInsets.all(8.0),
           height: _kDatePickerHeight,
-          decoration: BoxDecoration(color: Colors.white),
+          decoration: BoxDecoration(color: Color(0xFF191919)),
           child: CupertinoPicker(
-            backgroundColor: Colors.white,
+            backgroundColor: Color(0xFF191919),
             scrollController: dataScrollCtrl,
             itemExtent: _kDatePickerItemHeight,
             onSelectedItemChanged: (int index) {
@@ -228,8 +228,7 @@ class _DatePickerState extends State<_DataPickerComponent> {
                         child: Text(
                       '${widget.datas[index]}$suffixAppend',
                       style: TextStyle(
-                          color: Color(0xFF000046),
-                          fontSize: _kDatePickerFontSize),
+                          color: Colors.white, fontSize: _kDatePickerFontSize),
                       textAlign: TextAlign.center,
                       softWrap: false,
                       overflow: TextOverflow.fade,
@@ -253,7 +252,7 @@ class _DatePickerState extends State<_DataPickerComponent> {
 
     return Container(
       height: _kDatePickerTitleHeight,
-      decoration: BoxDecoration(color: Colors.white),
+      decoration: BoxDecoration(color: Color(0xFF191919)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -261,11 +260,11 @@ class _DatePickerState extends State<_DataPickerComponent> {
             height: _kDatePickerTitleHeight,
             child: FlatButton(
               child: Text(
-                '$cancel',
+                '$cancel'.toUpperCase(),
                 style: TextStyle(
-                  color: Theme.of(context).unselectedWidgetColor,
-                  fontSize: 16.0,
-                ),
+                    color: Colors.red,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.normal),
               ),
               onPressed: () => Navigator.pop(context),
             ),
@@ -276,9 +275,9 @@ class _DatePickerState extends State<_DataPickerComponent> {
             child: Text(
               widget.title.toString().toUpperCase(),
               style: TextStyle(
-                color: Colors.black,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: 16.0,
+                fontSize: 18.0,
               ),
             ),
           ),
@@ -286,11 +285,11 @@ class _DatePickerState extends State<_DataPickerComponent> {
             height: _kDatePickerTitleHeight,
             child: FlatButton(
               child: Text(
-                '$done',
+                '$done'.toUpperCase(),
                 style: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontSize: 16.0,
-                ),
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.normal),
               ),
               onPressed: () {
                 if (widget.route.onConfirm != null) {
